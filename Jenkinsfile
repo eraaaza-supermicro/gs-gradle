@@ -2,9 +2,6 @@
 node {
   def myGradleContainer = docker.image('gradle:jdk8-alpine')
   myGradleContainer.pull()
-  myGradleContainer.inside() {
-    sh 'id'
-  }
   stage('prep') {
     checkout scm
   }
